@@ -1,11 +1,77 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Crud mongo Db</title>
+    <!-- Bootstrap 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <a href="/" class="navbar-brand">Crud Mongo</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="Inserte su nombre" class="form-control">
+                            </div>
+                            <div class="form-group"><input type="text" name="description"
+                                    placeholder="Inserte sus apellidos" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="sexo" placeholder="Inserte su sexo" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary btnblock">
+                                Agregar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Sexo</th>
+                            <th>operation</th>
+                        </tr>
+                    </thead>
+                    <% for(var i=0; i< tasks.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= i + 1 %>
+                            </td>
+                            <td>
+                                <%= tasks[i].title %>
+                            </td>
+                            <td>
+                                <%= tasks[i].description %>
+                            </td>
+                            <td>
+                                <%= tasks[i].sexo %>
+                            </td>
+                            <td>
+                                <a href="/turn/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Activo</a>
+                                <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
+                                <a href="/edit/<%= tasks[i]._id%>" class="btn btninfo">Editar</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                            <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

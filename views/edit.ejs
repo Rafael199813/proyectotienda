@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <title>Crud mongo Db</title>
+    <!-- Bootstrap 4 CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <a href="/" class="navbar-brand">Crud Mongo</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/edit/<%= task._id%>" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="title" placeholder="Inserte su nombre" class="form-control" value="<%= task.title%>">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="description" placeholder="Inserte sus apellidos" class="form-control" value="<%= task.description%>">
+                            </div>
+                            <div class="form-group"><input type="text" name="sexo" placeholder="Inserte su sexo" class="form-control" value="<%= task.sexo%>">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Actualizar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

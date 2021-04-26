@@ -1,5 +1,5 @@
 {
-  "name": "proyectotienda",
+  "name": "galeria",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,8 @@
     "ejs": "^2.6.2",
     "express": "^4.16.4",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.12.5",
-    "morgan": "^1.9.1"
+    "mongoose": "^5.12.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.18.1"
   }
 }
