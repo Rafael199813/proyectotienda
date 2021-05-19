@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar navbar-dark bg-dark mb-4">
-        <a href="/" class="navbar-brand">Crud Mongo</a>
+        <a href="/" class="navbar-brand">Crud mongo</a>
     </nav>
     <div class="container">
         <div class="row">
@@ -20,12 +20,21 @@
                     <div class="card-body">
                         <form action="/edit/<%= task._id%>" method="POST">
                             <div class="form-group">
-                                <input type="text" name="title" placeholder="Inserte su nombre" class="form-control" value="<%= task.title%>">
+                                <input type="text" name="imagen" placeholder="Inserte la imagen" class="form-control" value="<%= task.imagen%>">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="description" placeholder="Inserte sus apellidos" class="form-control" value="<%= task.description%>">
+                                <input type="text" name="title" placeholder="Inserte nombre de producto" class="form-control" value="<%= task.producto%>">
                             </div>
-                            <div class="form-group"><input type="text" name="sexo" placeholder="Inserte su sexo" class="form-control" value="<%= task.sexo%>">
+                            <div class="form-group">
+                                <input type="text" name="description" placeholder="Inserte descripcion" class="form-control" value="<%= task.description%>">
+                            </div>
+                            <div class="form-group"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control" value="<%= task.ingrediente%>">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="precio" placeholder="Inserte precio" class="form-control" value="<%= task.precio%>">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="cantidad" placeholder="Inserte cantidad" class="form-control" value="<%= task.cantidad%>">
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">
                                 Actualizar

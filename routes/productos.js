@@ -1,21 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/task'); 
+const Task = require('../models/task');
 
 router.get('/', async (req, res) => {
-    const tasks = await Task.find();
-    res.render('index', {
-        tasks
-    });
-});
-
-router.get('/home', async (req, res) => {
     const tasks = await Task.find();
     res.render('db', {
         tasks
     });
 });
-
 
 router.post('/add', async (req, res) => {
     const task = new Task(req.body);
@@ -50,3 +42,4 @@ router.post('/edit/:id', async (req, res) => {
 });
 
 module.exports = router;
+

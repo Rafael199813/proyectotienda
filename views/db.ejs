@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Reposteria></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">navbar</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span> </a>
+                <a class="nav-item nav-link" href="/nosotros">Nosotros</a>
+                <a class="nav-item nav-link" href="/productos">Productos</a>
+                <a class="nav-item nav-link" href="/contacto">Contactos</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <input type="text" name="imagen" placeholder="Inserte la imagen" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="producto" placeholder="Inserte nombre de producto" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="description" placeholder="Inserte descripcion" class="form-control" >
+                            </div>
+                            <div class="form-group"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="precio" placeholder="Inserte precio" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="cantidad" placeholder="Inserte cantidad" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary btnblock">
+                                Agregar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>NÂ°</th>
+                            <th>Imagen</th>
+                            <th>Nombre Producto</th>
+                            <th>Ingrediente</th>
+                            <th>Descripcion</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <% for(var i=0; i< tasks.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%= i + 1 %>
+                            </td>
+                            <td>
+                                <%= tasks[i].imagen %>
+                            </td>
+                            <td>
+                                <%= tasks[i].producto %>
+                            </td>
+                            <td>
+                                <%= tasks[i].ingredientes %>
+                            </td>
+                            <td>
+                                <%= tasks[i].description %>
+                            </td>
+                            <td>
+                                <%= tasks[i].precio %>
+                            </td>
+                            <td>
+                                <%= tasks[i].cantidad %>
+                            </td>
+                            <td>
+                                <a href="/turn/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Activo</a>
+                                <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
+                                <a href="/edit/<%= tasks[i]._id%>" class="btn btninfo">Editar</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                            <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center">UTM 2021</footer>
+</body>
+</html>

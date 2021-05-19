@@ -1,77 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initialscale=1.0">
-    <title>Crud mongo Db</title>
-    <!-- Bootstrap 4 CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Reposteria</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
-
 <body>
-    <nav class="navbar navbar-dark bg-dark mb-4">
-        <a href="/" class="navbar-brand">Crud Mongo</a>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="/add" method="POST">
-                            <div class="form-group">
-                                <input type="text" name="title" placeholder="Inserte su nombre" class="form-control">
-                            </div>
-                            <div class="form-group"><input type="text" name="description"
-                                    placeholder="Inserte sus apellidos" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="sexo" placeholder="Inserte su sexo" class="form-control">
-                            </div>
-                            <button type="submit" class="btn btn-primary btnblock">
-                                Agregar
-                            </button>
-                        </form>
-                    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">navbar</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span> </a>
+                    <a class="nav-item nav-link" href="/home">Agregar Productos</a>
+                    <a class="nav-item nav-link" href="#productos">Productos</a>
+                    <a class="nav-item nav-link" href="#contacto">Contactos</a>
                 </div>
             </div>
-            <div class="col-md-7">
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>N°</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Sexo</th>
-                            <th>operation</th>
-                        </tr>
-                    </thead>
-                    <% for(var i=0; i< tasks.length; i++) { %>
-                        <tr>
-                            <td>
-                                <%= i + 1 %>
-                            </td>
-                            <td>
-                                <%= tasks[i].title %>
-                            </td>
-                            <td>
-                                <%= tasks[i].description %>
-                            </td>
-                            <td>
-                                <%= tasks[i].sexo %>
-                            </td>
-                            <td>
-                                <a href="/turn/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Activo</a>
-                                <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
-                                <a href="/edit/<%= tasks[i]._id%>" class="btn btninfo">Editar</a>
-                            </td>
-                        </tr>
-                        <% } %>
-                            <tbody></tbody>
-                </table>
+        </nav>
+    </header>
+    <div class="album py-5 bg-light" id="productos">
+        <div class="container">
+            <div class="row">
+                <% for(var i=0; i< tasks.length; i++) { %>
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" style="width: 100%" ; display: block;
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDPmkAl-IOMdrrxti6RdFwrfpQOtSTDORIsw&usqp=CAU" data-holderrendered="true">
+                            <div class="card-body">
+                                <h3>
+                                    <%= tasks[i].producto %>
+                                </h3><hr>
+                                <p class="card-text">
+                                    <%= tasks[i].description %>
+                                </p><hr>
+                                <p class="card-text">
+                                    <%= tasks[i].ingredientes %>
+                                </p><hr>
+                                <p class="card-text">
+                                    <%= tasks[i].precio %>
+                                </p>
+                                <p class="card-text">
+                                    <%= tasks[i].cantidad %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
             </div>
         </div>
     </div>
+    <footer class="text-center" id="contacto">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">navbar</a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span> </a>
+                    <a class="nav-item nav-link" href="#productos">Productos</a>
+                    <a class="nav-item nav-link" href="#contacto">Contactos</a>
+                </div>
+            </div>
+        </nav>
+    </footer>
 </body>
-
 </html>

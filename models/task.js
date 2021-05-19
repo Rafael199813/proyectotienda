@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // colocamos la url de conexión local y el nombre de la base de datos
-mongoose.connect('mongodb://localhost:27017/crud-mongo', {
+mongoose.connect('mongodb://localhost:27017/proyecto-delicias', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -13,9 +13,14 @@ db.once('open', () => {
 });
 
 const TaskSchema = new mongoose.Schema({
-    title: String,
+
+    imagen: String,
+    producto: String,
     description: String,
-    sexo: String,
+    ingredientes: String,
+    precio: Number,
+    cantidad: Number,
+
     status: {
         type: Boolean,
         default: false
