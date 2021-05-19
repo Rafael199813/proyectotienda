@@ -39,9 +39,23 @@
                                 <p class="card-text">
                                     <%= tasks[i].precio %>
                                 </p>
+
                                 <p class="card-text">
                                     <%= tasks[i].cantidad %>
                                 </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                            <input type="hidden" name="cmd" value="_xclick">
+                                            <input type="hidden" name="business" value="sb-obrml5325916@business.example.com"/>
+                                            <input type="hidden" name="currency_code" value="MXN"/>
+                                            <input type="hidden" name="item_name" value="<%= tasks[i].producto %>"/>
+                                            <input type="hidden" name="amount" value="<%= tasks[i].precio %>"/>
+                                            <input type="hidden" name="return" value="https://localhost:3000/"/>
+                                            <button type="submit"class="btn btn-sm btn-outlinesecondary">Comprar</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
