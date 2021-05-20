@@ -17,7 +17,6 @@
                     <a class="nav-item nav-link" href="/home">Agregar Productos</a>
                     <a class="nav-item nav-link" href="#productos">Productos</a>
                     <a class="nav-item nav-link" href="#contacto">Contactos</a>
-                    <a class="nav-item nav-link" href="/det">Dame click bb</a>
                 </div>
             </div>
         </nav>
@@ -34,20 +33,13 @@
                                 <h3>
                                     <%= tasks[i].producto %>
                                 </h3><hr>
-                                <p class="card-text">
-                                    <%= tasks[i].description %>
-                                </p><hr>
-                                <p class="card-text">
-                                    <%= tasks[i].ingredientes %>
-                                </p><hr>
                                 <p class="card-text" >
                                     Precio: <%= tasks[i].precio %>
                                 </p>
-
                                 <p class="card-text">
                                     Cantidad: <%= tasks[i].cantidad %>
                                 </p>
-                                <a href="det"> Mas sobre el producto. </a>
+                                <a href="/detalles/<%= tasks[i]._id%>" class="btn btn-info">Detalles</a>
                             </div>
                         </div>
                     </div>

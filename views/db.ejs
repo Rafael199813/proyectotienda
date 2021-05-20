@@ -38,10 +38,10 @@
                             <div class="form-group"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <input type="number" name="precio" placeholder="Inserte precio" class="form-control" required >
+                                <input type="number" name="precio" placeholder="Inserte precio" class="form-control" min="1" title="El precio debe ser mayor a 1" required >
                             </div>
                             <div class="form-group">
-                                <input type="number" name="cantidad" placeholder="Inserte cantidad" class="form-control" required >
+                                <input type="number" name="cantidad" placeholder="Inserte cantidad" class="form-control" min="0" title="La cantidad debe ser mayor a 0" required >
                             </div>
                             <button type="submit" class="btn btn-primary btnblock">
                                 Agregar
@@ -87,9 +87,8 @@
                                 <%= tasks[i].cantidad %>
                             </td>
                             <td>
-                                <a href="/turn/<%= tasks[i]._id%>" class="btn <%= tasks[i].status ? 'btn-success' : 'btn-dark' %>">Activo</a>
                                 <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
-                                <a href="/edit/<%= tasks[i]._id%>" class="btn btninfo">Editar</a>
+                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-info">Editar</a>
                             </td>
                         </tr>
                         <% } %>

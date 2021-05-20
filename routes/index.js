@@ -15,11 +15,17 @@ router.get('/home', async (req, res) => {
         tasks
     });
 });
-router.get('/det', async (req, res) => {
-    const tasks = await Task.find();
-    res.render('det', {
-        tasks
+
+router.get('/detalles/:id', async (req, res) => {
+    const { id } = req.params;
+    const task = await Task.findById(id); res.render('det', {
+        task
     });
+});
+
+router.get('/detalles/compra/:id', async (req, res) => {
+    const { id } = req.params; await Task.updateOne({ _id: id } , { $inc: { "cantidad": -1 } });
+    res.redirect('/');
 });
 
 router.post('/add', async (req, res) => {

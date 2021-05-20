@@ -10,14 +10,13 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Beso De Angel</a>
+            <a class="navbar-brand" href="/">Beso De Angel</a>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span> </a>
                     <a class="nav-item nav-link" href="/home">Agregar Productos</a>
                     <a class="nav-item nav-link" href="#productos">Productos</a>
                     <a class="nav-item nav-link" href="#contacto">Contactos</a>
-                    <a class="nav-item nav-link" href="/detalles">Dame click bb</a>
                 </div>
             </div>
         </nav>
@@ -25,36 +24,92 @@
     <div class="album py-5 bg-light" id="productos">
         <div class="container">
             <div class="row">
-                <% for(var i=0; i< tasks.length; i++) { %>
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" style="width: 100%" ; display: block;
-                                src="<%= tasks[i].imagen %>" data-holderrendered="true">
+                                src="<%= task.imagen %>" data-holderrendered="true">
                             <div class="card-body">
                                 <h3>
-                                    <%= tasks[i].producto %>
+                                    <%= task.producto %>
                                 </h3><hr>
                                 <p class="card-text">
-                                    <%= tasks[i].description %>
+                                    <%= task.description %>
                                 </p><hr>
                                 <p class="card-text">
-                                    <%= tasks[i].ingredientes %>
+                                    <%= task.ingredientes %>
                                 </p><hr>
                                 <p class="card-text" >
-                                    Precio: <%= tasks[i].precio %>
+                                    Precio: <%= task.precio %>
                                 </p>
 
                                 <p class="card-text">
-                                    Cantidad: <%= tasks[i].cantidad %>
+                                    Cantidad: <%= task.cantidad %>
                                 </p>
-                                <a href="det"> Mas sobre el producto. </a>
+                                <% if(task.cantidad >=1) { %>
+                                    <div id="paypal-button-container" class="mt-4"></div>
+                                <% } %>
+                                
+                                <% if(task.cantidad <=0) { %>
+                                    <p class="card-text">
+                                        <%= task.producto %> AGOTADAS
+                                    </p>
+                                <% } %>
                             </div>
                         </div>
                     </div>
-                <% } %>
             </div>
+            <script src="https://www.paypalobjects.com/api/checkout.js"></script>
         </div>
+
     </div>
     <footer class="text-center">ITVH 2021</footer>
 </body>
+<script>
+    // Render the PayPal button
+    paypal.Button.render({
+        // Set your environment
+        env: 'sandbox', // sandbox | production
+        // Specify the style of the button
+        style: {
+            layout: 'vertical',  // horizontal | vertical
+            size: 'medium',    // medium | large | responsive
+            shape: 'rect',      // pill | rect
+            color: 'gold'       // gold | blue | silver | black
+        },
+        // Specify allowed and disallowed funding sources
+        //
+        // Options:
+        // - paypal.FUNDING.CARD
+        // - paypal.FUNDING.CREDIT
+        // - paypal.FUNDING.ELV
+        funding: {
+            allowed: [paypal.FUNDING.CARD, paypal.FUNDING.CREDIT],
+            disallowed: []
+        },
+        // PayPal Client IDs - replace with your own
+        // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+        client: {
+            sandbox: 'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
+            production: '<insert production client id>'
+        },
+        payment: function (data, actions) {
+            return actions.payment.create({
+                payment: {
+                    transactions: [
+                        {
+                            amount: { total: '<%= task.precio %>', currency: 'MXN' }
+                        }
+                    ]
+                }
+            });
+        },
+        onAuthorize: function (data, actions) {
+            return actions.payment.execute().then(function () {
+                window.alert('¡Feliciades, pago realizado!');
+                location.href = "/detalles/compra/<%= task._id%>";
+            });
+        }
+    }, '#paypal-button-container');
+</script>
+
 </html>
