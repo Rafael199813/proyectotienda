@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Task = require('../models/task'); 
+const Task = require('../models/task');
 
 router.get('/', async (req, res) => {
     const tasks = await Task.find();
@@ -15,7 +15,12 @@ router.get('/home', async (req, res) => {
         tasks
     });
 });
-
+router.get('/det', async (req, res) => {
+    const tasks = await Task.find();
+    res.render('det', {
+        tasks
+    });
+});
 
 router.post('/add', async (req, res) => {
     const task = new Task(req.body);
@@ -38,14 +43,14 @@ router.get('/edit/:id', async (req, res) => {
     });
 });
 
-router.get('/delete/:id', async (req, res) => {
-    const { id } = req.params;
-    await Task.remove({ _id: id });
+router.post('/edit/:id', async (req, res) => {
+    const { id } = req.params; await Task.updateMany({ _id: id }, req.body);
     res.redirect('/');
 });
 
-router.post('/edit/:id', async (req, res) => {
-    const { id } = req.params; await Task.update({ _id: id }, req.body);
+router.get('/delete/:id', async (req, res) => {
+    const { id } = req.params;
+    await Task.remove({ _id: id });
     res.redirect('/');
 });
 
