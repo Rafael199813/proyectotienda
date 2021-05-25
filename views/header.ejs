@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reposteria Beso De Angel</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+<header>
+    <nav class="navbar bg-primary navbar-dark">    
+        <a class="navbar-brand" href="/">Beso De Angel</a>
+        <a class="navbar-brand active" href="/">Home <span class="sr-only">(current)</span> </a>
+        <a class="navbar-brand" href="/home">Agregar Productos</a>
+        <a class="navbar-brand" href="/productos">Productos</a>
+        <a class="navbar-brand" href="#contacto">Contactos</a>
+        <div class="form-inline">
+            <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="display" value="1">
+                <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
+                <input type="hidden" name="shopping_url" value="http://localhost:3000/productos">
+                <input type="image" src="https://www.paypal.com/en_US/i/btn/view_cart_02.gif" name="submit"
+                    alt="Make payments with paypal - its fast, free and secure" >
+            </form>
+        </div>
+      </nav>
+</header>

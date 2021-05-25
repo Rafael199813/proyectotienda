@@ -16,6 +16,13 @@ router.get('/home', async (req, res) => {
     });
 });
 
+router.get('/productos', async (req, res) => {
+    const tasks = await Task.find();
+    res.render('productos', {
+        tasks
+    });
+});
+
 router.get('/detalles/:id', async (req, res) => {
     const { id } = req.params;
     const task = await Task.findById(id); res.render('det', {

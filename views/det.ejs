@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reposteria Beso De Angel</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Beso De Angel</a>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span> </a>
-                    <a class="nav-item nav-link" href="#productos">Productos</a>
-                    <a class="nav-item nav-link" href="#contacto">Contactos</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <%- include ./header.ejs %>
+
     <div class="album py-5 bg-light" id="productos">
         <div class="container">
             <div class="row">
@@ -40,22 +20,26 @@
                                 <p class="card-text" >
                                     Precio: <%= task.precio %>
                                 </p>
-
-                                <p class="card-text">
-                                    Cantidad: <%= task.cantidad %>
-                                </p>
-                                <% if(task.cantidad >=1) { %>
                                     <div id="paypal-button-container" class="mt-4"></div>
-                                <% } %>
-                                
-                                <% if(task.cantidad <=0) { %>
-                                    <p class="card-text">
-                                        <%= task.producto %> AGOTADAS
-                                    </p>
-                                <% } %>
                             </div>
                         </div>
                     </div>
+                    <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="add" value="1">
+                        <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
+                        <input type="hidden" name="item_name" value="<%= task.producto %>">
+                        <input type="hidden" name="amount" value="<%= task.precio %>">
+                        <input type="hidden" name="shipping" value="1.0">
+                        <input type="hidden" name="shopping_url" value="http://localhost:3000/productos" >
+                        <input type="hidden" name="return" value="http://localhost:3000/productos">
+                        <input type="hidden" name="cancel_return" value="http://localhost:3000/productos" >
+                        <input type="hidden" name="bn" value="PP-ShopCartBF:x-click-but22.gif:NonHosted">
+                        <input type="hidden" name="currency_code" value="MXN"/>
+                        <input type="image" src="https://paypal.com/en_US/i/btn/x-click-but22.gif" name="submit"
+                            alt="Make payments with paypal - its fast, free and secure" >
+                        <img " alt="" src="https://www.paypalobjects/.com/en_US/i/btn/btn_cart_LG.gif" width="1" height="1">
+                    </form>
             </div>
             <script src="https://www.paypalobjects.com/api/checkout.js"></script>
         </div>

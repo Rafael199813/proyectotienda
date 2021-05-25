@@ -6,3 +6,21 @@ body {
 a {
   color: #00B7FF;
 }
+
+img {
+  border-radius: 50%;
+}
+
+.card1 {
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  background-color: rgb(214, 37, 37);
+  box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.568);
+  transition: 0.4s;
+}
+
+.card1:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25), -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
