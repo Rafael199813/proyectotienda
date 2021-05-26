@@ -1,45 +1,22 @@
-body {
+.body-1 {
   padding: 12px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(3, 250, 213);
 }
-  
+
 a {
-  color: #00B7FF;
+  display: block;
+  font-size: 25px;
+  color: white;
+  
 }
-    .bd-placeholder-img {
-      margin-bottom: 0px;
-      font-size: 1.250rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 1.100rem;
-        height: 150px;
-      }
-    }
-
-.fondo {
-  background-image: url(../images/logo.jpg);
-  background-size:cover;
-  background-position: 0% 20%;
-  text-align: right;
-  color:rgb(0, 0, 0);
-  text-shadow: 4px 4px 4px #f5eded;
-  background-repeat: no-repeat;
-}
-
   .card-box1 {
     padding: 20px;
     width: 350;
     height: 550px;
     border-radius: 10px;
     margin-bottom: 30px;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.568);
     transition: 0.4s;
   
