@@ -6,13 +6,18 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^2.7.4",
     "express": "^4.16.4",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.11.1",
     "http-errors": "~1.6.3",
     "mongoose": "^5.12.0",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1",
+    "passport": "^0.4.1"
   }
 }

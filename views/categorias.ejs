@@ -1,0 +1,34 @@
+<%- include ./header.ejs %>
+        <div class="container">
+
+
+
+            <div class="row mt-5">
+                <% for(var i=0; i< tasks.length; i++) { %>
+                <div class="col-lg-4" name="Target">
+                    <div class="text-center card-box1">
+                        <div class="member-card pt-2 pb-2">
+                            <div class="col">
+                                <img src="<%= tasks[i].imagen %>" style="height: 160PX;"" alt="Producto">
+                            </div><hr>
+                            <h5 class="mt-4"><%= tasks[i].producto %></h5>
+
+                            <h6 class="mt-4">Descripción</h6>
+                            <div class="col">
+                                <p class="mr-4"><%= tasks[i].description %></p>
+                            </div>
+                            <div class="col-row">
+                                <p class="mr-4">Precio: $<%= tasks[i].precio %></p>
+                            </div><hr>
+                            <center><a  class="btn btn-primary" href="/detalles/<%= tasks[i]._id%>">Detalles</a></center>
+                            
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+
+        </div>
+        <%- include ./footer.ejs %>
+</body>
+</html>

@@ -20,7 +20,7 @@
                                 <input type="number" name="precio" placeholder="Inserte precio" class="form-control" min="1" title="El precio debe ser mayor a 1" required >
                             </div>
                             <div class="form-group">
-                                <input type="number" name="cantidad" placeholder="Inserte cantidad" class="form-control" min="0" title="La cantidad debe ser mayor a 0" required >
+                                <input type="number" name="categoria" placeholder="Inserte cantidad" class="form-control" min="0" title="La cantidad debe ser mayor a 0" required >
                             </div>
                             <button type="submit" class="btn btn-primary btnblock">
                                 Agregar
@@ -64,7 +64,7 @@
                                 <%= tasks[i].precio %>
                             </td>
                             <td>
-                                <%= tasks[i].cantidad %>
+                                <%= tasks[i].categoria %>
                             </td>
                             <td>
                                 <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>

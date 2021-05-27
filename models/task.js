@@ -11,7 +11,6 @@ db.on('error', console.error.bind(console, 'connection error:')); // enlaza el t
 db.once('open', () => {
     console.log('connected'); // si esta todo ok, imprime esto
 });
-
 const TaskSchema = new mongoose.Schema({
 
     imagen: String,
@@ -19,13 +18,8 @@ const TaskSchema = new mongoose.Schema({
     description: String,
     ingredientes: String,
     precio: Number,
-    cantidad: Number,
-
-    status: {
-        type: Boolean,
-        default: false
-    }
+    categoria: Number,
+    
 });
-
 const user = mongoose.model('tasks', TaskSchema);
 module.exports = user;
