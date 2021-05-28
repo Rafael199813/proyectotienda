@@ -8,20 +8,26 @@
                         <form action="/add" method="POST">
                             <input type="text" name="imagen" placeholder="Inserte la imagen" class="form-control" required >
                             </div>
-                            <div class="form-group">
+                            <div class="card-body">
                                 <input type="text" name="producto" placeholder="Inserte nombre de producto" class="form-control" required >
                             </div>
-                            <div class="form-group">
+                            <div class="card-body">
                                 <input type="text" name="description" placeholder="Inserte descripcion" class="form-control" required >
                             </div>
-                            <div class="form-group"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control" required>
+                            <div class="card-body"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control" required>
                             </div>
-                            <div class="form-group">
+                            <div class="card-body">
                                 <input type="number" name="precio" placeholder="Inserte precio" class="form-control" min="1" title="El precio debe ser mayor a 1" required >
                             </div>
-                            <div class="form-group">
-                                <input type="number" name="categoria" placeholder="Inserte cantidad" class="form-control" min="0" title="La cantidad debe ser mayor a 0" required >
-                            </div>
+                            <div class="form-control">
+                                <select name="categoria" class="form-control">
+                                    <option value="1">Crepa</option>
+                                    <option value="2" >Raspados</option>
+                                    <option value="3">Frape</option>
+                                    <option value="4">Beso De Angel</option>
+                                    <option value="5">Chamoyada</option>
+                                  </select>
+                            </div>      
                             <button type="submit" class="btn btn-primary btnblock">
                                 Agregar
                             </button>
@@ -39,7 +45,7 @@
                             <th>Ingrediente</th>
                             <th>Descripcion</th>
                             <th>Precio</th>
-                            <th>Cantidad</th>
+                            <th>Categoria</th>
                         </tr>
                     </thead>
                     <% for(var i=0; i< tasks.length; i++) { %>

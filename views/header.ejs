@@ -1,46 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link rel="shortcut icon" href="../images/lov.ico"/>
+    <link rel="shortcut icon" href="../images/lov.ico" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reposteria Beso De Angel</title>
-    <link rel="stylesheet" href="/stylesheets/style.css"/>
-    <link rel="stylesheet" href="/stylesheets/bootsnav.css"/>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/bootsnav.css" />
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    
-    <!--Footer-->
-<!------ Include the above in your HEAD tag ---------->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script-->
+    <!-- CDN DE FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--Footer-->
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
 </head>
+
 <body class="body-1">
     <header>
         <div class="container-fluid px-0">
-            <nav class="navbar navbar-expand-sm navbar-dark bg-black py-1 px-1"> <a class="navbar-brand" href="/"><img style="height: 100px; width: 100px;" src="../images/lov.png"> Beso de Angel</a> <span class="v-line"></span> <button class="navbar-toggler mr-3"  type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-black py-1 px-1">
+                <a class="navbar-brand" href="/"><img style="height: 100px; width: 100px;" src="../images/lov.png"> Beso
+                    de Angel </a><span class="v-line"></span> <button class="navbar-toggler mr-3" type="button"
+                    data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item active"> <a class="nav-link" href="/productos/categoria/1">Inicio</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="/home">Agregar producto</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="/productos">Productos</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="/ubicacion">Ubicanos</a> </li>
-                        <li class="nav-item">
-                            <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
-                                <input type="hidden" name="cmd" value="_cart">
-                                <input type="hidden" name="display" value="1">
-                                <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
-                                <input type="hidden" name="shopping_url" value="http://localhost:3000/productos">
-                                <input type="image" src="https://www.paypal.com/en_US/i/btn/view_cart_02.gif" name="submit"
-                                    alt="Make payments with paypal - its fast, free and secure" >
-                            </form>
+                        <li class="nav-item"> <a class="nav-link" href="/home"><i class="fas fa-ice-cream"> Agregar
+                                    producto</a></i></li>
+                        <li class="nav-item"></i> <a class="nav-link" href="/productos"><i class="fas fa-shopping-bag">
+                                    Productos</i></a> </li></i>
+                        <li class="nav-item"></i> <a class="nav-link" href="/ubicacion"><i
+                                    class="fas fa-map-marker-alt"> Ubicanos</i></a> </li></i>
+                        <!--li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="/productos" id="navbardrop" data-toggle="dropdown">
+                                    <i class="fas fa-shopping-bag"> Productos</i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="/productos">Todos</a>
+                                  <a class="dropdown-item" href="/productos/categoria/1">Crepas</a>
+                                  <a class="dropdown-item" href="/productos/categoria/2">Raspados</a>
+                                  <a class="dropdown-item" href="/productos/categoria/3">Beso De Angel</a>
+                                  <a class="dropdown-item" href="/productos/categoria/4">Frapes</a>
+                                  <a class="dropdown-item" href="/productos/categoria/5">Chamoyadas</a>
+
+                                </div-->
+                        </li>
+
+                        <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal"></i>
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="display" value="1">
+                            <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
+                            <input type="hidden" name="shopping_url" value="http://localhost:3000/productos">
+                            <input type="image" src="https://www.paypal.com/en_US/i/btn/view_cart_02.gif" name="submit"
+                                alt="Make payments with paypal - its fast, free and secure">
+                        </form>
                         </li>
                     </ul>
-                    
+
                 </div>
             </nav>
         </div>

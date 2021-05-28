@@ -1,11 +1,15 @@
 <%- include ./header.ejs %>
-        <div class="container">
-
-
-
-            <div class="row mt-5">
-                <% for(var i=0; i< tasks.length; i++) { %>
-                <div class="col-lg-4" name="Target">
+<div class="container">
+   <br>
+<a type="button" class="btn btn-outline-primary" href="../categoria/1">Crepas</a>
+<a type="button" class="btn btn-outline-secondary"href="../categoria/2">Raspados</a>
+<a type="button" class="btn btn-outline-success"href="../categoria/3">Frapes</a>
+<a type="button" class="btn btn-outline-info"href="../categoria/4">Beso De Angel</a>
+<a type="button" class="btn btn-outline-warning"href="../categoria/5">Chamoyadas</a>
+<div class="row mt-5">
+    <% for(var i=0; i< tasks.length; i++) { %>
+        
+        <div class="col-lg-4" name="Target">
                     <div class="text-center card-box1">
                         <div class="member-card pt-2 pb-2">
                             <div class="col">
@@ -19,15 +23,29 @@
                             </div>
                             <div class="col-row">
                                 <p class="mr-4">Precio: $<%= tasks[i].precio %></p>
-                            </div><hr>
-                            <center><a  class="btn btn-primary" href="/detalles/<%= tasks[i]._id%>">Detalles</a></center>
-                            
+                            </div><hr>                            
                         </div>
                     </div>
+                    <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="add" value="1">
+                        <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
+                        <input type="hidden" name="item_name" value="<%= tasks[i].producto %>">
+                        <input type="hidden" name="amount" value="<%= tasks[i].precio %>">
+                        <input type="hidden" name="shipping" value="1.0">
+                        <input type="hidden" name="shopping_url" value="http://localhost:3000/productos" >
+                        <input type="hidden" name="return" value="http://localhost:3000/productos">
+                        <input type="hidden" name="cancel_return" value="http://localhost:3000/productos" >
+                        <input type="hidden" name="bn" value="PP-ShopCartBF:x-click-but22.gif:NonHosted">
+                        <input type="hidden" name="currency_code" value="MXN"/>
+                        <input type="image" src="https://paypal.com/en_US/i/btn/x-click-but22.gif" name="submit"
+                            alt="Make payments with paypal - its fast, free and secure" >
+                        <img " alt="" src="https://www.paypalobjects/.com/en_US/i/btn/btn_cart_LG.gif" width="1" height="1">
+                    </form>
                 </div>
                 <% } %>
             </div>
-
+            <script src="https://www.paypalobjects.com/api/checkout.js"></script>
         </div>
         <%- include ./footer.ejs %>
 </body>
