@@ -22,7 +22,7 @@ router.get('/home', async (req, res) => {
         tasks
     });
 });
-router.get('/productos/categoria/:id', async (req, res) => {
+router.get('/categoria/:id', async (req, res) => {
     const { id } = req.params;
     const tasks = await Task.find({categoria: id });
     res.render('categorias', {
