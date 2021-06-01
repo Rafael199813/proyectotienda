@@ -25,3 +25,8 @@ function SearchTargets() {
             Targets[TargetIndex].style.display = "";
     }
 }
+
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+  }

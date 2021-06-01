@@ -1,0 +1,118 @@
+  .ul-filtro {
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    margin: 10px;
+    padding: 0;
+    display:flex;
+  }
+  .ul-filtro li {
+    list-style:none;
+  }
+  .ul-filtro li a {
+    display:block;
+    position:relative;
+    width:153px;
+    height:70px;
+    line-height:65px;
+    font-size:25px;
+    text-align:center;
+    text-decoration:none;
+    color:#5f391b;
+    margin: 0 30px;
+    transition:.5s;
+  }
+  .ul-filtro li a span {
+    position:absolute;
+    transition: transform .5s;
+  }
+  .ul-filtro li a span:nth-child(1),
+  .ul-filtro li a span:nth-child(3){
+    width:100%;
+    height:3px;
+    background:#5f391b;
+  }
+  .ul-filtro li a span:nth-child(1) {
+    top:0;
+    left:0;
+    transform-origin: right;
+  }
+  .ul-filtro li a:hover span:nth-child(1) {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:transform .5s;
+  }
+  
+  .ul-filtro li a span:nth-child(3) {
+    bottom:0;
+    left:0;
+    transform-origin: left;
+  }
+  .ul-filtro li a:hover span:nth-child(3) {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition:transform .5s;
+  }
+  
+  .ul-filtro li a span:nth-child(2),
+  .ul-filtro li a span:nth-child(4){
+    width:3px;
+    height:100%;
+    background:#5f391b;
+  }
+  .ul-filtro li a span:nth-child(2) {
+    top:0;
+    left:0;
+    transform:scale(0);
+    transform-origin: bottom;
+  }
+  .ul-filtro li a:hover span:nth-child(2) {
+    transform: scale(1);
+    transform-origin: top;
+    transition:transform .5s;
+  }
+  .ul-filtro li a span:nth-child(4) {
+    top:0;
+    right:0;
+    transform:scale(0);
+    transform-origin: top;
+  }
+  .ul-filtro li a:hover span:nth-child(4) {
+    transform: scale(1);
+    transform-origin: bottom;
+    transition:transform .5s;
+  }
+  
+  .facebook:hover {
+    color: #5f391b;
+  }
+  .facebook:hover span { 
+    background: #5f391b;
+  }
+  .twitter:hover {
+    color: #5f391b;
+  }
+  .twitter:hover span { 
+    background: #5f391b
+  }
+  .instagram:hover {
+    color: #5f391b;
+  }
+  .instagram:hover span { 
+    background: #5f391b;
+  }
+  .google:hover {
+    color: #5f391b;
+  }
+  .google:hover span { 
+    background:#5f391b;
+  }
+  .ul-filtro li a .twitter {
+    color: #5f391b;
+  }
+  .ul-filtro li a:hover:nth-child(3) {
+    color: #5f391b;
+  }#0cc4fcfiltro li a:hover:nth-child(4) {
+    color: #5f391b;
+  }

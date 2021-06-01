@@ -1,7 +1,13 @@
-.body-1 {
+.body{
   padding: 12px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(3, 250, 213);
+  background-image: linear-gradient(to bottom right, rgb(229, 125, 238), rgb(230, 162, 247));
+
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 a {
@@ -11,27 +17,39 @@ a {
   
 }
   .card-box1 {
-    padding: 20px;
+    padding: 30px;
     width: 350;
-    height: 550px;
+    height: 480px;
     border-radius: 10px;
     margin-bottom: 30px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.568);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.4s;
   
   }
+  .card-box1:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+  }
 
 .card-box2 {
-  padding: 10px;
+  padding: 40px;
   width: 350;
   height: 500px;
   border-radius: 10px;
   margin-bottom: 30px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.568);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.4s;
+}
+.card-box2:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
+}
+
+.container-map{
+  padding: 2px 16px;
+  grid-column-gap: 300px;
 }
 
 img {

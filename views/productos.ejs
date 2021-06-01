@@ -1,14 +1,61 @@
 <%- include ./header.ejs %>
+
 <div class="container">
-   <br>
-<a type="button" class="btn btn-outline-primary" href="/categoria/1">Crepas</a>
-<a type="button" class="btn btn-outline-secondary"href="/categoria/2">Raspados</a>
-<a type="button" class="btn btn-outline-success"href="/categoria/3">Frapes</a>
-<a type="button" class="btn btn-outline-info"href="/categoria/4">Beso De Angel</a>
-<a type="button" class="btn btn-outline-warning"href="/categoria/5">Chamoyadas</a>
+    <ul class="ul-filtro">
+        <li>
+          <a class="crepas" href="/categoria/1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <i>Crepa</i>
+          </a>
+        </li>
+        <li>
+          <a class="raspados" href="/categoria/2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <i>Raspados</i>
+          </a>
+        </li>
+        <li>
+          <a class="frapes" href="/categoria/3">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <i>Frapes</i>
+          </a>
+        </li>
+        <li>
+          <a class="beso de angel" href="/categoria/4">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <i>BesoA</i>
+          </a>
+        </li>
+        <li>
+            <a class="chamoyadas" href="/categoria/5">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <i>Chamoyadas</i>
+            </a>
+          </li>
+      </ul>
+<!--a type="button" class="btn btn-primary" href="/categoria/1">Crepas</a>
+<a type="button" class="btn btn-secondary"href="/categoria/2">Raspados</a>
+<a type="button" class="btn btn-success"href="/categoria/3">Frapes</a>
+<a type="button" class="btn btn-danger"href="/categoria/4">Beso De Angel</a>
+<a type="button" class="btn btn-warning"href="/categoria/5">Chamoyadas</a-->
+<br><br><br>
 <div class="row mt-5">
     <% for(var i=0; i< tasks.length; i++) { %>
-        
         <div class="col-lg-4" name="Target">
                     <div class="text-center card-box1">
                         <div class="member-card pt-2 pb-2">
@@ -25,7 +72,6 @@
                                 <p class="mr-4">Precio: $<%= tasks[i].precio %></p>
                             </div><hr>                            
                         </div>
-                    </div>
                     <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
                         <input type="hidden" name="cmd" value="_cart">
                         <input type="hidden" name="add" value="1">
@@ -42,6 +88,7 @@
                             alt="Make payments with paypal - its fast, free and secure" >
                         <img " alt="" src="https://www.paypalobjects/.com/en_US/i/btn/btn_cart_LG.gif" width="1" height="1">
                     </form>
+                    </div>
                 </div>
                 <% } %>
             </div>
