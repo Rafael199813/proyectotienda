@@ -2,53 +2,78 @@
 
 <div class="container">
     <ul class="ul-filtro">
-        <li>
-          <a class="crepas" href="/categoria/1">
+      <li>
+        <a class="crepas" href="/categoria/1">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i>Crepa</i>
+        </a>
+      </li>
+      <li>
+        <a class="raspados" href="/categoria/2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i>Raspados</i>
+        </a>
+      </li>
+      <li>
+        <a class="frapes" href="/categoria/3">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i>Frapes</i>
+        </a>
+      </li>
+      <li>
+        <a class="beso de angel" href="/categoria/4">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <i>BesoA</i>
+        </a>
+      </li>
+      <li>
+          <a class="chamoyadas" href="/categoria/5">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-            <i>Crepa</i>
+            <i>Chamoyadas</i>
           </a>
         </li>
-        <li>
-          <a class="raspados" href="/categoria/2">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i>Raspados</i>
-          </a>
-        </li>
-        <li>
-          <a class="frapes" href="/categoria/3">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i>Frapes</i>
-          </a>
-        </li>
-        <li>
-          <a class="beso de angel" href="/categoria/4">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <i>BesoA</i>
-          </a>
-        </li>
-        <li>
-            <a class="chamoyadas" href="/categoria/5">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <i>Chamoyadas</i>
-            </a>
-          </li>
-      </ul>
-<br><br><br>
+    </ul>
+<br><br><br><br><br><br>
+
+  <!--h1>Productos agregados recientemente <span class="badge bg-secondary">Nuevos</span></h1>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://cdn.kiwilimon.com/recetaimagen/35112/40965.jpg" class="d-block w-100"style="height: 600PX;">
+      </div>
+      <% for(var i=0; i< 3; i++) { %>
+      <div class="carousel-item">
+        <img src="<%= tasks[i].imagen %>" class="d-block w-100" style="height: 600PX;">
+      </div>
+      <% } %>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div-->
+
+
 
 <div class="row mt-5">
   <h1>Example heading <span class="badge bg-secondary">New</span></h1>
@@ -59,7 +84,7 @@
                             <div class="col">
                                 <img src="<%= tasks[i].imagen %>" style="height: 160PX;" alt="Producto">
                             </div><hr>
-                            <h5 class="mt-4"><%= tasks[i].producto %> <span class="badge bg-secondary">New</span></h5>
+                            <h5 class="mt-4"><%= tasks[i].producto %></h5>
                             <h6 class="mt-4">Descripción</h6>
                             <div class="col">
                                 <p class="mr-4"><%= tasks[i].description %></p>
@@ -67,11 +92,27 @@
                             <div class="col-row">
                                 <p class="mr-4">Precio: $<%= tasks[i].precio %></p>
                             </div><hr>                            
-                        </div><br>
+                        </div>
+                        <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
+                          <input type="hidden" name="cmd" value="_cart">
+                          <input type="hidden" name="add" value="1">
+                          <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
+                          <input type="hidden" name="item_name" value="<%= tasks[i].producto %>">
+                          <input type="hidden" name="amount" value="<%= tasks[i].precio %>">
+                          <input type="hidden" name="shipping" value="1.0">
+                          <input type="hidden" name="shopping_url" value="http://localhost:3000/productos" >
+                          <input type="hidden" name="return" value="http://localhost:3000/productos">
+                          <input type="hidden" name="cancel_return" value="http://localhost:3000/productos" >
+                          <input type="hidden" name="bn" value="PP-ShopCartBF:x-click-but22.gif:NonHosted">
+                          <input type="hidden" name="currency_code" value="MXN"/>
+                          <input type="image" src="https://paypal.com/en_US/i/btn/x-click-but22.gif" name="submit"
+                              alt="Make payments with paypal - its fast, free and secure" >
+                          <img " alt="" src="https://www.paypalobjects/.com/en_US/i/btn/btn_cart_LG.gif" width="1" height="1">
+                      </form><br>
                         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<!--button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Ver detalles
-</button>
+</button-->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -134,7 +175,29 @@
                                 <input type="image" src="https://paypal.com/en_US/i/btn/x-click-but22.gif" name="submit"
                                     alt="Make payments with paypal - its fast, free and secure" >
                                 <img " alt="" src="https://www.paypalobjects/.com/en_US/i/btn/btn_cart_LG.gif" width="1" height="1">
-                            </form>
+                            </form><br>
+                            
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"><%= tasks[i].producto %></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <img src="<%= tasks[i].imagen %>" style="height: 160PX;" alt="Producto">
+                                    <h6 class="mt-4">Descripción</h6>
+                                    <p class="mr-4">Precio: $<%= tasks[i].precio %></p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary">Continuar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                             </div>
                         </div>
                         
