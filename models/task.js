@@ -19,6 +19,7 @@ const TaskSchema = new mongoose.Schema({
     ingredientes: String,
     precio: Number,
     categoria: Number,
+    provendido: Number,
     
 });
 const user = mongoose.model('tasks', TaskSchema);

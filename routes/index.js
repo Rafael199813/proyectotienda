@@ -29,6 +29,13 @@ router.get('/categoria/:id', async (req, res) => {
         tasks
     });
 });
+router.get('/provendido/:id', async (req, res) => {
+    const { id } = req.params;
+    const tasks = await Task.find({provendido: id });
+    res.render('pro_masvendido', {
+        tasks
+    });
+});
 router.get('/usu', async (req, res) => {
     const tasks = await Usu.find();
     res.render('usu', {

@@ -1,0 +1,89 @@
+<%- include ./header.ejs %>
+
+<h3 class="text-light text-center">Seleccione la sucursal que desea revisar</h3>
+<div class="container">
+<br>
+<ul class="ul-ubicacion">
+    <li>
+      <a class="tomasga" href="/provendido/1">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i>Tomas Garrido</i>
+      </a>
+    </li>
+    <li>
+      <a class="polvora" href="/provendido/2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i>Parque Polvora</i>
+      </a>
+    </li>
+    <li>
+      <a class="parquepollo" href="/provendido/3">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i>Parque Pollo</i>
+      </a>
+    </li>
+    <li>
+      <a class="esperanzairis" href="/provendido/4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <i>Esperanza Iris</i>
+      </a>
+    </li>
+  </ul>
+<br><br><br><br><br>
+            <div class="row mt-5">
+                <% for(var i=0; i< tasks.length; i++) { %>
+                <div class="col-lg-4" name="Target">
+                    <div class="text-center card-box1">
+                        <div class="member-card pt-2 pb-2">
+                            <div class="col">
+                                <img src="<%= tasks[i].imagen %>" style="height: 160PX;"" alt="Producto">
+                            </div><hr>
+                            <h5 class="mt-4"><%= tasks[i].producto %></h5>
+
+                            <h6 class="mt-4">Descripción</h6>
+                            <div class="col">
+                                <p class="mr-4"><%= tasks[i].description %></p>
+                            </div>
+                            <div class="col-row">
+                                <p class="mr-4">Precio: $<%= tasks[i].precio %></p>
+                            </div><hr>
+                            
+                        </div>
+                        <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST" target="paypal">
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="add" value="1">
+                        <input type="hidden" name="business" value="sb-obrml5325916@business.example.com">
+                        <input type="hidden" name="item_name" value="<%= tasks[i].producto %>">
+                        <input type="hidden" name="amount" value="<%= tasks[i].precio %>">
+                        <input type="hidden" name="shipping" value="1.0">
+                        <input type="hidden" name="shopping_url" value="http://localhost:3000/productos" >
+                        <input type="hidden" name="return" value="http://localhost:3000/productos">
+                        <input type="hidden" name="cancel_return" value="http://localhost:3000/productos" >
+                        <input type="hidden" name="bn" value="PP-ShopCartBF:x-click-but22.gif:NonHosted">
+                        <input type="hidden" name="currency_code" value="MXN"/>
+                        <input type="image" src="https://paypal.com/en_US/i/btn/x-click-but22.gif" name="submit"
+                            alt="Make payments with paypal - its fast, free and secure" >
+                        <img " alt="" src="https://www.paypalobjects/.com/en_US/i/btn/btn_cart_LG.gif" width="1" height="1">
+                    </form>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+        </div>
+        <%- include ./footer.ejs %>
+</body>
+
+</html>     

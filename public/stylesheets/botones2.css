@@ -1,19 +1,19 @@
-  .ul-filtro {
+  .ul-ubicacion {
     position:absolute;
-    top:25%;
+    top:35%;
     left:50%;
     transform:translate(-50%,-50%);
     margin: 10px;
     padding: 0;
     display:flex;
   }
-  .ul-filtro li {
+  .ul-ubicacion li {
     list-style:none;
   }
-  .ul-filtro li a {
+  .ul-ubicacion li a {
     display:block;
     position:relative;
-    width:153px;
+    width:200px;
     height:70px;
     line-height:65px;
     font-size:25px;
@@ -23,34 +23,34 @@
     margin: 0 30px;
     transition:.5s;
   }
-  .ul-filtro li a span {
+  .ul-ubicacion li a span {
     position:absolute;
     transition: transform .5s;
   }
-  .ul-filtro li a span:nth-child(1),
-  .ul-filtro li a span:nth-child(3){
+  .ul-ubicacion li a span:nth-child(1),
+  .ul-ubicacion li a span:nth-child(3){
     width:100%;
     height:3px;
     background:#fdffff;
   }
-  .ul-filtro li a span:nth-child(1) {
+  .ul-ubicacion li a span:nth-child(1) {
     top:0;
     left:0;
     transform-origin: right;
   }
-  .ul-filtro li a:hover span:nth-child(1) {
+  .ul-ubicacion li a:hover span:nth-child(1) {
     transform: scaleX(0);
     transform-origin: left;
     transition:transform .5s;
     color:#04ffff;
   }
   
-  .ul-filtro li a span:nth-child(3) {
+  .ul-ubicacion li a span:nth-child(3) {
     bottom:0;
     left:0;
     transform-origin: left;
   }
-  .ul-filtro li a:hover span:nth-child(3) {
+  .ul-ubicacion li a:hover span:nth-child(3) {
     transform: scaleX(0);
     transform-origin: right;
     transition:transform .5s;
@@ -58,75 +58,63 @@
   }
 
   
-  .ul-filtro li a span:nth-child(2),
-  .ul-filtro li a span:nth-child(4){
+  .ul-ubicacion li a span:nth-child(2),
+  .ul-ubicacion li a span:nth-child(4){
     width:3px;
     height:100%;
     background:#ffffff;
   }
-  .ul-filtro li a span:nth-child(2) {
+  .ul-ubicacion li a span:nth-child(2) {
     top:0;
     left:0;
     transform:scale(0);
     transform-origin: bottom;
   }
-  .ul-filtro li a:hover span:nth-child(2) {
+  .ul-ubicacion li a:hover span:nth-child(2) {
     transform: scale(1);
     transform-origin: top;
     transition:transform .5s;
   }
-  .ul-filtro li a span:nth-child(4) {
+  .ul-ubicacion li a span:nth-child(4) {
     top:0;
     right:0;
     transform:scale(0);
     transform-origin: top;
   }
-  .ul-filtro li a:hover span:nth-child(4) {
+  .ul-ubicacion li a:hover span:nth-child(4) {
     transform: scale(1);
     transform-origin: bottom;
     transition:transform .5s;
   }
   
-  .crepas:hover {
+  .tomasga:hover {
     color: #04ffff;
   }
-  .crepas:hover span { 
+  .tomasga:hover span { 
     background: #ffffff;
   }
-  .raspados:hover {
+  .polvora:hover {
     color: #04ffff;
   }
-  .raspados:hover span { 
+  .polvora:hover span { 
     background: #fdfdfd
   }
-  .frapes:hover {
+  .parquepollo:hover {
     color: #04ffff;
   }
-  .frapes:hover span { 
+  .parquepollo:hover span { 
     background: #e6e5e5;
   }
-  .beso:hover {
+  .esperanzairis:hover {
     color: #04ffff;
   }
-  .beso:hover span { 
+  .esperanzairis:hover span { 
     background:#ffffff;
   }
-  .chamoyadas:hover {
+  .ul-ubicacion li a .twitter {
     color: #04ffff;
   }
-  .chamoyadas:hover span { 
-    background:#ffffff;
-  }
-  .provendido:hover {
-    color: #04ffff;
-  }
-  .provendido:hover span { 
-    background:#ffffff;
-  }
-  .ul-filtro li a .twitter {
-    color: #04ffff;
-  }
-  .ul-filtro li a:hover:nth-child(3) {
+  .ul-ubicacion li a:hover:nth-child(3) {
     color:#04ffff;
   }#0cc4fcfiltro li a:hover:nth-child(4) {
     color: #04ffff;

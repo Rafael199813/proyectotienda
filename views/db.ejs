@@ -27,7 +27,16 @@
                                     <option value="4">Beso De Angel</option>
                                     <option value="5">Chamoyada</option>
                                   </select>
-                            </div>      
+                            </div>    
+                            <div class="form-control">
+                                <select name="provendido" class="form-control">
+                                    <option value="">Null</option>
+                                    <option value="1">Tomas Garrido</option>
+                                    <option value="2" >Polvora</option>
+                                    <option value="3">Esperanza Iris</option>
+                                    <option value="4">Parque Pollo</option>
+                                  </select>
+                            </div>     
                             <button type="submit" class="btn btn-primary btnblock">
                                 Agregar
                             </button>
@@ -46,6 +55,7 @@
                             <th>Descripcion</th>
                             <th>Precio</th>
                             <th>Categoria</th>
+                            <th>Mas Vendido</th><
                         </tr>
                     </thead>
                     <% for(var i=0; i< tasks.length; i++) { %>
@@ -71,6 +81,9 @@
                             </td>
                             <td>
                                 <%= tasks[i].categoria %>
+                            </td>
+                            <td>
+                                <%= tasks[i].provendido %>
                             </td>
                             <td>
                                 <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
