@@ -1,23 +1,24 @@
     <%- include ./header.ejs %>
-
+<br>
+<br>
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-10">
                 <div class="card">
                     <div class="card-body">
-                        <form action="/add" method="POST">
+                        <form action="/add" method="POST"><br>
                             <input type="text" name="imagen" placeholder="Inserte la imagen" class="form-control" required >
                             </div>
                             <div class="card-body">
-                                <input type="text" name="producto" placeholder="Inserte nombre de producto" class="form-control" required >
+                                <input type="text" name="producto" placeholder="Inserte Nombre De Producto" class="form-control" required >
                             </div>
                             <div class="card-body">
-                                <input type="text" name="description" placeholder="Inserte descripcion" class="form-control" required >
+                                <input type="text" name="description" placeholder="Inserte Descripcion" class="form-control" required >
                             </div>
-                            <div class="card-body"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control" required>
+                            <div class="card-body"><input type="text" name="ingredientes" placeholder="Inserte Los Lngredientes" class="form-control" required>
                             </div>
                             <div class="card-body">
-                                <input type="number" name="precio" placeholder="Inserte precio" class="form-control" min="1" title="El precio debe ser mayor a 1" required >
+                                <input type="number" name="precio" placeholder="Inserte Precio" class="form-control" min="1" title="El precio debe ser mayor a 1" required >
                             </div>
                             <div class="form-control">
                                 <select name="categoria" class="form-control">
@@ -44,11 +45,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
-                <table class="table table-bordered table-hover">
+            <div class="col-md-14">
+                <table class="table table-bordered table-hover " bgcolor=  #DAF7A6 >
                     <thead>
                         <tr>
-                            <th>NÂ°</th>
+                            <th>Numero</th>
                             <th>Imagen</th>
                             <th>Nombre Producto</th>
                             <th>Ingrediente</th>
@@ -85,9 +86,10 @@
                             <td>
                                 <%= tasks[i].provendido %>
                             </td>
-                            <td>
+                            <td><br>
                                 <a href="/delete/<%= tasks[i]._id%>" class="btn btn-danger">Borrar</a>
-                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-info">Editar</a>
+                                <br>
+                                <a href="/edit/<%= tasks[i]._id%>" class="btn btn-info">Editar</a><br>
                             </td>
                         </tr>
                         <% } %>
