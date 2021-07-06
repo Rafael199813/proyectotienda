@@ -1,11 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="shortcut icon" href="/public/images/lov.ico" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reposteria Beso De Angel</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/bootsnav.css" />
+    <link rel="stylesheet" href="/stylesheets/botones.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!--card album-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+    <!--emoji-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css%22%3E">
+
+
+</head>
+
+<body class="body">
+    <header>
+       
+    </header>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
-<!DOCTYPE html>
-<html>
-<head>
 	<title>Login Page</title>
    <!--Made with love by Mutiullah Samim -->
    
@@ -31,19 +63,19 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form action="/login" method="POST">
+				<form action="/admin" >
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" name="usuario" class="form-control" placeholder="usuario">
+						<input type="text" name="usuario" class="form-control" placeholder="usuario" required="godecito">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" name="password"class="form-control" placeholder="password">
+						<input type="password" name="password"class="form-control" placeholder="password" required="1234">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
@@ -53,12 +85,8 @@
 					</div>
 				</form>
 			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
 				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					<a href="/">Inicio</a>
 				</div>
 			</div>
 		</div>

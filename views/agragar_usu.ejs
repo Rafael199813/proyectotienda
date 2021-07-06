@@ -51,43 +51,69 @@
             </nav>
         </div>
     </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="/edit/<%= task._id%>" method="POST">
-                            <div class="form-group">
-                                <input type="text" name="imagen" placeholder="Inserte la imagen" class="form-control" value="<%= task.imagen%>">
-                            </div><hr>
-                            <div class="form-group">
-                                <input type="text" name="producto" placeholder="Inserte nombre de producto" class="form-control" value="<%= task.producto%>">
-                            </div><hr>
-                            <div class="form-group">
-                                <input type="text" name="description" placeholder="Inserte descripcion" class="form-control" value="<%= task.description%>">
-                            </div><hr>
-                            <div class="form-group"><input type="text" name="ingredientes" placeholder="Inserte los ingredientes" class="form-control" value="<%= task.ingrediente%>">
-                            </div><hr>
-                            <div class="form-group">
-                                <input type="number" name="precio" placeholder="Inserte precio" class="form-control" value="<%= task.precio%>" min="1" title="El precio debe ser mayor a 1" >
-                            </div><hr>
-                                <select name="categoria" class="form-control">
-                                    <option value="1">Crepa</option>
-                                    <option value="2" >Raspados</option>
-                                    <option value="3">Frape</option>
-                                    <option value="4">Beso De Angel</option>
-                                    <option value="5">Chamoyada</option>
-                                  </select><hr>
-                            <button type="submit" class="btn btn-primary btn-block">
-                                Actualizar
-                            </button>
-                        </form>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add3" method="POST">
+                        <input type="text" name="nombre" placeholder="Inserte Nombre Usuario" class="form-control" required >
+                        </div>
+                        <div class="card-body">
+                            <input type="text" name="correo" placeholder="Agrege un Correo" class="form-control" required >
+                        </div>
+                        <div class="card-body">
+                            <input type="password" name="password" placeholder="Agrege Password" class="form-control" required >
+                        </div>
+                        <div class="card-body"><input type="text" name="usuario" placeholder="usuario" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btnblock">
+                            Agregar
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>NÂ°</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Password</th>
+                        <th>Usuario</th>
+                    </tr>
+                </thead>
+                <% for(var i=0; i< task_usuario.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= i + 1 %>
+                        </td>
+                        <td>
+                            <%= task_usuario[i].nombre %>
+                        </td>
+                        <td>
+                            <%= task_usuario[i].correo %>
+                        </td>
+                        <td>
+                            <%= task_usuario[i].password %>
+                        </td>
+                        <td>
+                            <%= task_usuario[i].usuario %>
+                        </td>
+                        <td>
+                            <a href="/delete1/<%= task_usuario[i]._id%>" class="btn btn-danger">Borrar</a>
+                            <a href="/edit1/<%= task_usuario[i]._id%>" class="btn btn-primary">Edit</a>
+                        
+                        </td>
+                    </tr>
+                    <% } %>
+                        <tbody></tbody>
+            </table>
+        </div>
     </div>
-    <%- include ./footer.ejs %>
+</div>
+<%- include ./footer.ejs %>
 </body>
-
 </html>
